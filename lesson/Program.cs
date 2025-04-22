@@ -1,4 +1,6 @@
-﻿namespace lesson
+﻿using System.Runtime.InteropServices;
+
+namespace lesson
 {
     public class Program
     {
@@ -8,11 +10,18 @@
         /// <param name="args">The arguments passed to the program</param>
         public static void Main(string[] args)
         {
-            // Write some code here...
-            int n = Convert.ToInt32(Console.ReadLine());
+            
+            Student s = new Student("Mario");
+            Student s2 = new Student("Luigi");
 
-            Console.WriteLine("Il perimetro del quadrato è " + n * 4);
-            Console.WriteLine("L'area del quadrato è " + n * n);
+            Teacher t = new Teacher("Big D", "Cs Teacher");
+
+            ClassMember[] members = new ClassMember[] { s, s2, t };
+
+            Class classe = new Class("ITS-DotNet", members);
+
+            Console.WriteLine($"{classe}");
+
         }
     }
 }
